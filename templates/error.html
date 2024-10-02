@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Error</title>
+    <style>
+        body {
+            background-image: url("https://t3.ftcdn.net/jpg/05/66/18/66/360_F_566186631_v4lbdSnnp8u4nwwGDQYRF0aLZysQMeSM.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .error-container {
+            text-align: center;
+            margin-top: 50px;
+            color: red;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <h2>Error</h2>
+        <p>{{ error }}</p>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+
+</html>

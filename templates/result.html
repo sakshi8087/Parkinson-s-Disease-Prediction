@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction Result</title>
+    <style>
+        .result-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .healthy {
+            color: green;
+            font-size: 1.5em;
+        }
+
+        .parkinsons {
+            color: red;
+            font-size: 1.5em;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #45a049;
+        }
+
+        body {
+            background-image: url("https://t3.ftcdn.net/jpg/05/66/18/66/360_F_566186631_v4lbdSnnp8u4nwwGDQYRF0aLZysQMeSM.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="result-container">
+        <h1>Prediction Result</h1>
+
+        <img src="data:image/png;base64, {{result.plot_url}}" alt="Probability Garph">
+        {% if result.prediction == "Parkinson's Disease" %}
+        <p class="parkinsons">You may have Parkinson's Disease.</p>
+        <p>Probability: {{ result.probability }}%</p>
+        <p>⚠️ Please consult a healthcare professional.</p>
+
+        <h2>Precautions to Take</h2>
+        <ul>
+            <li>Consult with a neurologist for further evaluation and diagnosis.</li>
+            <li>Engage in physical therapy and regular exercise to maintain mobility.</li>
+            <li>Follow prescribed medications and treatments.</li>
+            <li>Focus on a balanced diet and adequate hydration.</li>
+            <li>Take steps to manage stress and maintain mental well-being.</li>
+            <li>Consider occupational therapy to assist with daily tasks.</li>
+        </ul>
+        {% else %}
+        <h1 class="healthy">You are Healthy.</h1>
+        <h2>Probability: {{ result.probability }}%</h2>
+        <h3>✅ Keep maintaining a healthy lifestyle.</h3>
+        {% endif %}
+        <h1><a href="/">Go Back</a></h1>
+    </div>
+</body>
+
+</html>
